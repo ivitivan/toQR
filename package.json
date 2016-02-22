@@ -11,7 +11,8 @@
     "bundle": "browserify -t babelify -o ./dist/main/index.js ./src/main/index.js",
     "build-html": "jade src -H -o dist",
     "watch": "watch 'npm run build' ./src",
-    "test": "mocha --compilers js:babel-core/register ./src/**/*.test.js"
+    "test": "mocha --compilers js:babel-core/register ./src/**/*.test.js",
+    "gh-pages": "npm run build && browserify -t babelify -o ./index.js ./main.js && jade -o ./ ./index.jade && stylus -o main.css ./src/main/main.styl"
   },
   "keywords": [],
   "author": "Vitaly Ivanov <ivitivan@gmail.com> (https://github.com/ivitivan)",
